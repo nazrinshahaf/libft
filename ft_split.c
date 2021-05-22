@@ -6,7 +6,7 @@
 /*   By: nfernand <nfernand@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 16:57:23 by nfernand          #+#    #+#             */
-/*   Updated: 2021/05/21 12:54:43 by nfernand         ###   ########.fr       */
+/*   Updated: 2021/05/22 11:54:52 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ void	ft_fill_str(char const *s, char c, char **res)
 			count = 0;
 			while (s[i] != c && s[i])
 			{
-				res[j][count++] = s[i];
+				res[j][count] = s[i];
 				i++;
+				count++;
 			}
 			res[j][count] = '\0';
 			j++;
@@ -51,7 +52,7 @@ void	ft_fill_str(char const *s, char c, char **res)
 		}
 		i++;
 	}
-	res[j] = NULL;
+	res[j] = 0;
 }
 
 size_t	ft_alloc_str(char const *s, char c, char **res)
@@ -94,17 +95,15 @@ size_t	ft_count_strs(char const *s, char c)
 		i++;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c)
 		{
 			strs_count++;
-			while (s[i] && s[i] == c)
+			while (s[i] && s[i] != c)
 				i++;
 			continue ;
 		}
 		i++;
 	}
-	if (s[1] != c)
-		strs_count++;
 	return (strs_count);
 }
 
