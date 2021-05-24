@@ -26,12 +26,12 @@ FILES = ft_memset \
 		ft_isascii \
 		ft_isprint \
 		ft_isspace_bonus \
-		ft_isupper \
+		ft_isupper_bonus \
 		ft_islower_bonus \
 		ft_while_ischar_bonus \
 		ft_while_isnotchar_bonus \
 		ft_toupper \
-		ft_tolower_bonus \
+		ft_tolower \
 		ft_calloc \
 		ft_strdup \
 		ft_substr \
