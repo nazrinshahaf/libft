@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfernand <nfernand@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/19 16:15:27 by nfernand          #+#    #+#             */
-/*   Updated: 2021/05/24 16:22:11 by nfernand         ###   ########.fr       */
+/*   Created: 2021/05/24 15:29:27 by nfernand          #+#    #+#             */
+/*   Updated: 2021/05/24 15:54:56 by nfernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
+#include <string.h>
 
-void	ft_putnbr_fd(int n, int fd)
+char*  ft_strndup(const char *s, size_t n)
 {
-	long int	num;
+	char *res;
+	size_t	i;
 
-	num = (long int)n;
-	if (num < 0)
+	res = malloc(sizeof(char) * n + 1);
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (i < n)
 	{
-		ft_putchar_fd('-', fd);
-		num *= -1;
+		res[i] = s[i];
+		i++;
 	}
-	if (num >= 10)
-	{
-		ft_putnbr_fd(num / 10, fd);
-		num = num % 10;
-	}
-	if (num < 10)
-		ft_putchar_fd(num + '0', fd);
+	res[i] = '\0';
+	return (res);
 }
