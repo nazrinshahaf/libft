@@ -25,13 +25,13 @@ FILES = ft_memset \
 		ft_isalnum \
 		ft_isascii \
 		ft_isprint \
-		ft_isspace \
+		ft_isspace_bonus \
 		ft_isupper \
-		ft_islower \
-		ft_while_ischar \
-		ft_while_isnotchar \
+		ft_islower_bonus \
+		ft_while_ischar_bonus \
+		ft_while_isnotchar_bonus \
 		ft_toupper \
-		ft_tolower \
+		ft_tolower_bonus \
 		ft_calloc \
 		ft_strdup \
 		ft_substr \
@@ -44,7 +44,7 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
-		ft_strndup \
+		ft_strndup_bonus \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
